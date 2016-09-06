@@ -10,15 +10,24 @@ void mousePressed()
 {
 	redraw();
 }
-class Die //models one single dice cube
+class Dice //models one single dice cube
 {
 	//variable declarations here
-	Die(int x, int y) //constructor
+	Dice(int x, int y) //constructor
 	{
 		//variable initializations here
+		int myX = x;
+		int myY = y;
+
 	}
 	void roll()
 	{
+		int num = (int)(Math.random()*6);
+		if (num <= 1)
+		{
+			
+		}
+
 		//your code here
 	}
 	void show()
