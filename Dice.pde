@@ -6,17 +6,21 @@ void setup()
 void draw()
 {
 	background(70, 60, 0);
-	Die one = new Die(200, 200);
-	one.roll();
-	one.show();
+	for (int i = 50, i = i + 50, i <= 400)
+	{
+		Die one = new Die(i*50, i*50);
+		one.roll();
+		one.show();
+	}
+	
 }
 void mousePressed()
 {
 	redraw();
 }
-class Die //models one single dice cube
+class Die
 {
-	int myX, myY, num, radius, dieSize;
+	int myX, myY, num, radius, dieSize, dieRed, dieGreen, dieBlue;
 	Die(int x, int y)
 	{
 		myX = x;
@@ -32,17 +36,21 @@ class Die //models one single dice cube
 	{
 		radius = 10;
 		dieSize = 50;
+		dieRed = 45;
+		dieGreen = 150;
+		dieBlue = 60;
+		noStroke();
 		if (num <= 1)
 		{
 			noStroke();
-			fill (45, 150, 60);
+			fill (dieRed, dieGreen, dieBlue);
 			rect (myX, myY, dieSize, dieSize, 15);
 			fill(0);
 			ellipse (myX + 25, myY + 25, radius, radius);
 		}
 		else if (num <= 2)
 		{
-			fill (45, 150, 60);
+			fill (dieRed, dieGreen, dieBlue);
 			rect (myX, myY, dieSize, dieSize, 15);
 			fill(0);
 			ellipse (myX + 15, myY + 35, radius, radius);
@@ -50,7 +58,7 @@ class Die //models one single dice cube
 		}
 		else if (num <= 3)
 		{
-			fill (45, 150, 60);
+			fill (dieRed, dieGreen, dieBlue);
 			rect (myX, myY, dieSize, dieSize, 15);
 			fill(0);
 			ellipse (myX + 15, myY + 35, radius, radius);
@@ -59,16 +67,36 @@ class Die //models one single dice cube
 		}
 		else if (num <= 4)
 		{
-			fill (45, 150, 60);
+			fill (dieRed, dieGreen, dieBlue);
 			rect (myX, myY, dieSize, dieSize, 15);
 			fill(0);
-			ellipse(myX + 16, myY + 16, radius, radius);
+			ellipse(myX + 15, myY + 15, radius, radius);
+			ellipse(myX + 35, myY + 15, radius, radius);
+			ellipse(myX + 15, myY + 35, radius, radius);
+			ellipse(myX + 35, myY + 35, radius, radius);
 		}
 		else if (num <= 5)
 		{
-			fill (45, 150, 60);
+			fill (dieRed, dieGreen, dieBlue);
 			rect (myX, myY, dieSize, dieSize, 15);
 			fill(0);
+			ellipse(myX + 15, myY + 15, radius, radius);
+			ellipse(myX + 35, myY + 15, radius, radius);
+			ellipse(myX + 15, myY + 35, radius, radius);
+			ellipse(myX + 35, myY + 35, radius, radius);
+			ellipse(myX + 25, myY + 25, radius, radius);
+		}
+		else 
+		{
+			fill (dieRed, dieGreen, dieBlue);
+			rect (myX, myY, dieSize, dieSize, 15);
+			fill(0);
+			ellipse(myX + 15, myY + 15, radius, radius);
+			ellipse(myX + 15, myY + 25, radius, radius);
+			ellipse(myX + 15, myY + 35, radius, radius);
+			ellipse(myX + 35, myY + 15, radius, radius);
+			ellipse(myX + 35, myY + 25, radius, radius);
+			ellipse(myX + 35, myY + 35, radius, radius);
 		}
 
 	}
