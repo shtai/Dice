@@ -6,20 +6,23 @@ void setup()
 void draw()
 {
 	background(70, 60, 0);
-	for (int i = 50, i = i + 50, i <= 400)
+	for (int i = 30; i <= 350; i = i + 70)
 	{
-		Die one = new Die(i*50, i*50);
-		one.roll();
-		one.show();
+		for (int j = 30; j <= 200; j = j + 60)
+		{
+			Die one = new Die(i, j);
+			one.roll();
+			one.show();
+		}
 	}
-	
+
 }
 void mousePressed()
 {
 	redraw();
 }
 class Die
-{
+{	
 	int myX, myY, num, radius, dieSize, dieRed, dieGreen, dieBlue;
 	Die(int x, int y)
 	{
