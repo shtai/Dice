@@ -1,3 +1,5 @@
+int strokeWidth = 15;
+int sum = 0;
 void setup()
 {
 	size(400, 400);
@@ -5,16 +7,22 @@ void setup()
 }
 void draw()
 {
-	background(70, 60, 0);
+	strokeWeight(strokeWidth);
+	stroke(0);
+	fill(70, 60, 0);
+	rect(strokeWidth/2,strokeWidth/2,400-strokeWidth,250);
 	for (int i = 30; i <= 350; i = i + 70)
 	{
-		for (int j = 30; j <= 200; j = j + 60)
+		for (int j = 30; j <= 200; j = j + 70)
 		{
 			Die one = new Die(i, j);
 			one.roll();
 			one.show();
+			sum = sum + one.num;
 		}
 	}
+	fill (0);
+	text("sum: "+sum, 200, 330);
 
 }
 void mousePressed()
@@ -39,9 +47,9 @@ class Die
 	{
 		radius = 10;
 		dieSize = 50;
-		dieRed = 45;
-		dieGreen = 150;
-		dieBlue = 60;
+		dieRed = (int)(Math.random()*255+10);
+		dieGreen = (int)(Math.random()*255+10);
+		dieBlue = (int)(Math.random()*255+10);
 		noStroke();
 		if (num <= 1)
 		{
