@@ -7,10 +7,9 @@ void setup()
 }
 void draw()
 {
-	strokeWeight(strokeWidth);
-	stroke(0);
-	fill(70, 60, 0);
-	rect(strokeWidth/2,strokeWidth/2,400-strokeWidth,250);
+	background(0, 255, 255);
+	fill(0);
+	rect(0, -100, 400, 360, 50);
 	for (int i = 30; i <= 350; i = i + 70)
 	{
 		for (int j = 30; j <= 200; j = j + 70)
@@ -21,13 +20,37 @@ void draw()
 			sum = sum + one.num;
 		}
 	}
-	fill (0);
-	text("sum: "+sum, 200, 330);
+
+	textSize(20);
+	textAlign(CENTER);
+	text("Sum: " + sum, 200, 290);
+	fill(0, 100, 255);
+	rect(25, 300, 110, 50, 25);
+	rect(145, 300, 110, 50, 25);
+	rect(265, 300, 110, 50, 25);
+	fill(0);
+	text("Sum < 50", 80, 333);
+	text("Sum = 50", 200, 333);
+	text("Sum > 50", 320, 333);
 
 }
 void mousePressed()
 {
-	redraw();
+	if (mouseX >= 50 && mouseX <= 170 && mouseY >= 300 && mouseY <= 360)
+	{
+		redraw();
+		if (sum < 50)
+		{
+			fill (0);
+			stroke(0);
+			text("YOU WIN!!!", 200, 370);
+		}
+		if (sum == 50)
+		{
+			text("NOT SO QUITE..", 200, 370);
+		}
+	}
+		sum = 0;
 }
 class Die
 {	
@@ -47,9 +70,9 @@ class Die
 	{
 		radius = 10;
 		dieSize = 50;
-		dieRed = (int)(Math.random()*255+10);
-		dieGreen = (int)(Math.random()*255+10);
-		dieBlue = (int)(Math.random()*255+10);
+		dieRed = (int)(Math.random()*255+30);
+		dieGreen = (int)(Math.random()*255+30);
+		dieBlue = (int)(Math.random()*255+30);
 		noStroke();
 		if (num <= 1)
 		{
