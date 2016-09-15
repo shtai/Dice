@@ -1,5 +1,7 @@
 int strokeWidth = 15;
 int sum = 0;
+int textX = 200;
+int textY = 380;
 void setup()
 {
 	size(400, 400);
@@ -32,25 +34,74 @@ void draw()
 	text("Sum < 50", 80, 333);
 	text("Sum = 50", 200, 333);
 	text("Sum > 50", 320, 333);
-
-}
-void mousePressed()
-{
-	if (mouseX >= 50 && mouseX <= 170 && mouseY >= 300 && mouseY <= 360)
+	if (mouseX >= 25 && mouseX <= 135 && mouseY >= 300 && mouseY <= 350)
 	{
-		redraw();
 		if (sum < 50)
 		{
 			fill (0);
 			stroke(0);
-			text("YOU WIN!!!", 200, 370);
+			text("NICE", textX, textY);
 		}
 		if (sum == 50)
 		{
-			text("NOT SO QUITE..", 200, 370);
+			text("NOPE", textX, textY);
+		}
+		if (sum > 50)
+		{
+			text("NOPE", textX, textY);
 		}
 	}
-		sum = 0;
+	if (mouseX >= 145 && mouseX <= 255 && mouseY >= 300 && mouseY <= 350)
+	{
+		if (sum < 50)
+		{
+			fill (0);
+			stroke(0);
+			text("NICE TRY ;)", textX, textY);
+		}
+		if (sum == 50)
+		{
+			text("WOW! LUCKY YOU!!", textX, textY);
+		}
+		if (sum > 50)
+		{
+			text("NICE TRY ;)", textX, textY);
+		}
+	}
+	if (mouseX >= 265 && mouseX <= 375 && mouseY >= 300 && mouseY <= 350)
+	{
+		if (sum < 50)
+		{
+			fill (0);
+			stroke(0);
+			text("NOPE", textX, textY);
+		}
+		if (sum == 50)
+		{
+			text("NOPE", textX, textY);
+		}
+		if (sum > 50)
+		{
+			text("WOW! YOU GUESSED RIGHT! :D", textX, textY);
+		}
+	}
+	sum = 0;
+}
+void mousePressed()
+{
+	if (mouseX >= 25 && mouseX <= 135 && mouseY >= 300 && mouseY <= 350)
+	{
+		redraw();
+	}
+	if (mouseX >= 145 && mouseX <= 255 && mouseY >= 300 && mouseY <= 350)
+	{
+		redraw();
+	}
+	if (mouseX >= 265 && mouseX <= 375 && mouseY >= 300 && mouseY <= 350)
+	{
+		redraw();
+	}
+
 }
 class Die
 {	
