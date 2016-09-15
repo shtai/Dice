@@ -42,11 +42,7 @@ void draw()
 			stroke(0);
 			text("NICE", textX, textY);
 		}
-		if (sum == 50)
-		{
-			text("NOPE", textX, textY);
-		}
-		if (sum > 50)
+		if (sum >= 50)
 		{
 			text("NOPE", textX, textY);
 		}
@@ -55,8 +51,6 @@ void draw()
 	{
 		if (sum < 50)
 		{
-			fill (0);
-			stroke(0);
 			text("NICE TRY ;)", textX, textY);
 		}
 		if (sum == 50)
@@ -70,13 +64,7 @@ void draw()
 	}
 	if (mouseX >= 265 && mouseX <= 375 && mouseY >= 300 && mouseY <= 350)
 	{
-		if (sum < 50)
-		{
-			fill (0);
-			stroke(0);
-			text("NOPE", textX, textY);
-		}
-		if (sum == 50)
+		if (sum <= 50)
 		{
 			text("NOPE", textX, textY);
 		}
