@@ -8,7 +8,7 @@ void setup()
 	noLoop();
 }
 void draw()
-{
+{	
 	background(0, 255, 255);
 	fill(0);
 	rect(0, -100, 400, 360, 50);
@@ -51,7 +51,7 @@ void draw()
 	{
 		if (sum < 50)
 		{
-			text("NICE TRY ;)", textX, textY);
+			text("NICE TRY :D", textX, textY);
 		}
 		if (sum == 50)
 		{
@@ -59,14 +59,14 @@ void draw()
 		}
 		if (sum > 50)
 		{
-			text("NICE TRY ;)", textX, textY);
+			text("NICE TRY :D", textX, textY);
 		}
 	}
 	if (mouseX >= 265 && mouseX <= 375 && mouseY >= 300 && mouseY <= 350)
 	{
 		if (sum <= 50)
 		{
-			text("NOPE", textX, textY);
+			text("NICE TRY :^)", textX, textY);
 		}
 		if (sum > 50)
 		{
